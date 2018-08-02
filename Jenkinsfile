@@ -1,9 +1,14 @@
 pipeline {
-  agent none
+  agent {
+    docker {
+      image 'maven'
+    }
+
+  }
   stages {
     stage('Test') {
       steps {
-        sh 'echo PATH=${PATH}'
+        sshCommand(failOnError: true, command: 'ls -lrt')
       }
     }
   }
