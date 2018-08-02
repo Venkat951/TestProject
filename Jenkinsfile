@@ -1,9 +1,9 @@
 pipeline {
-  agent any
+  agent none
   stages {
-    stage('initalize') {
+    stage('Test') {
       steps {
-        echo 'Test'
+        sh 'echo PATH=${PATH}'
       }
     }
   }
